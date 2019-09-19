@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on GhostIAm Блог</title><link>https://ghostiam.dev/ru/categories/linux/</link><description>Recent content in Linux on GhostIAm Блог</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Wed, 25 Nov 2020 05:30:00 +0900</lastBuildDate><atom:link href="https://ghostiam.dev/ru/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Настраиваем LVM, используем LVM RAID 1, тестируем</title><link>https://ghostiam.dev/ru/posts/linux-lvm/</link><pubDate>Wed, 25 Nov 2020 05:30:00 +0900</pubDate><guid>https://ghostiam.dev/ru/posts/linux-lvm/</guid><description>&lt;h2 id="предисловие">
+ Предисловие
+ &lt;a class="heading-link" href="#%d0%bf%d1%80%d0%b5%d0%b4%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%b8%d0%b5">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Ссылка на заголовок">&lt;/i>
+ &lt;span class="sr-only">Ссылка на заголовок&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Вот и пришла пора увеличить место на своём домашнем сервере, для этого было куплено 2 диска разных производителей, но одинакового объёма.&lt;br>
+Захотелось сделать soft RAID1, но мне не очень подходит mdadm, так как я хочу иметь более гибкое зеркало, которое можно будет легко расширить в будущем, а не выделять сразу большой объём.&lt;br>
+Решил попытать счастья с LVM RAID, но информации по нему, в сжатом виде, мало, в основном всё заканчивает на том, как его создать. Попробую исправить этот пробел.&lt;/p>
+&lt;figure>&lt;img src="https://ghostiam.dev/ru/posts/linux-lvm/image_hu_418fe2bb12b2f865.webp"
+alt="Мои диски">&lt;figcaption>
+ &lt;p>Мои диски&lt;/p>
+&lt;/figcaption>
+&lt;/figure></description></item><item><title>Настройка ИБП на Linux</title><link>https://ghostiam.dev/ru/posts/linux-ups/</link><pubDate>Sat, 29 Aug 2020 06:15:27 +0900</pubDate><guid>https://ghostiam.dev/ru/posts/linux-ups/</guid><description>&lt;h2 id="предисловие">
+ Предисловие
+ &lt;a class="heading-link" href="#%d0%bf%d1%80%d0%b5%d0%b4%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%b8%d0%b5">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Ссылка на заголовок">&lt;/i>
+ &lt;span class="sr-only">Ссылка на заголовок&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Несколько лет назад, для резервного питания роутера и Orange Pi, я покупал ИБП &lt;a href="http://pcm.ru/catalog/item/1484" class="external-link" target="_blank" rel="external noopener">Powercom WOW-700U&lt;/a>
+. Хороший, дешёвый девайс, имеет USB порт, автоматически включается при появлении напряжения, не ест из розетки лишнего электричества, так как тип ИБП &amp;ldquo;резервный&amp;rdquo;, что очень хорошо, когда он должен быть включён 24/7, в отличии от моего основного ИБП&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, который не прочь покушать ~50 Ватт из-за своей &amp;ldquo;интерактивной&amp;rdquo; технологии.&lt;/p>
+&lt;p>Время шло и Orange Pi сначала заменилась на мини-ПК на атоме, а потом и старый ПК стал сервером.&lt;/p>
+&lt;p>Но давайте перейдём уже к сути и самой настройке ИБП на Debian-like Linux!&lt;/p>
+&lt;figure>&lt;img src="https://ghostiam.dev/ru/posts/linux-ups/image_hu_d49049cbb9b0f3a5.webp"
+alt="Кадр из мультфильма &amp;ldquo;Ледниковый период&amp;rdquo;">&lt;figcaption>
+ &lt;p>Кадр из мультфильма &amp;ldquo;Ледниковый период&amp;rdquo;&lt;/p>
+&lt;/figcaption>
+&lt;/figure></description></item></channel></rss>

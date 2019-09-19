@@ -1,0 +1,1 @@
+function setPreferredLanguage(){const e=window.location.pathname;e.startsWith("/ru")?localStorage.setItem("preferredLanguage","ru"):e.startsWith("/en")&&localStorage.setItem("preferredLanguage","en")}setPreferredLanguage()
