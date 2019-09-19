@@ -1,10 +1,146 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <mate charest="utf-8" />
-        <title>Hello world!</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-    </body>
-</html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>I'm a Ghost</title> 
+
+<style type="text/css">
+<!--
+html, body
+{
+    height: 100%;
+    margin: 0;
+	padding: 0;
+}
+
+body {
+height:100%;
+	background-position: center center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url('/bg.jpg');
+
+}
+
+body>div {
+	margin: auto;
+	text-align: center;
+	width: 100%;
+}
+
+p {  line-height: 20px;  margin: 0;}
+
+.go{
+	padding-top: 10px; 
+}
+
+.soon{
+	position: absolute;
+	top:47%;
+}
+
+.soon a{
+	color: #000000;
+	text-decoration: none;
+}
+
+a:link {
+	color: #000000;
+}
+a:visited {
+	color: #000000;
+}
+a:active {
+	color: #6b6b6b;
+}
+
+html {
+    -webkit-animation: flicker 15s infinite;
+}
+
+@-webkit-keyframes flicker{
+    0% {filter: invert(0%);}
+    3% {filter: invert(0%);}
+    76% {filter: invert(0%);}
+    77% {filter: invert(100%);}
+    78% {filter: invert(0%);}
+    79% {filter: invert(100%);}
+    80% {filter: invert(0%);}
+    98% {filter: invert(0%);}
+    99% {filter: invert(100%);}
+    100% {filter: invert(0%);}
+}
+-->
+</style>
+</head>  
+<body>
+
+<div class="go">
+	<h1>Hi, I'm a Ghost</h1>
+    <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c8bfadaaa5a9bbbcadba88afa0a7bbbce6a1a5">[email&#160;protected]</a>
+    </p>
+</div>
+
+<div class="soon">
+	<p>The Cake is a Lie!</p>
+</div>
+<script>
+	!function() {
+    "use strict";
+    function e(e) {
+        try {
+            if ("undefined" == typeof console)
+                return;
+            "error" in console ? console.error(e) : console.log(e)
+        } catch (e) {}
+    }
+    function t(e) {
+        return i.innerHTML = '<a href="' + e.replace(/"/g, "&quot;") + '"></a>', i.childNodes[0].getAttribute("href") || ""
+    }
+    function r(e, t) {
+        var r = e.substr(t, 2);
+        return parseInt(r, 16)
+    }
+    function n(n, o) {
+        for (var c = "", a = r(n, o), i = o + 2; i < n.length; i += 2) {
+            var f = r(n, i) ^ a;
+            c += String.fromCharCode(f)
+        }
+        try {
+            c = decodeURIComponent(escape(c))
+        } catch (l) {
+            e(l)
+        }
+        return t(c)
+    }
+    var o = "/cdn-cgi/l/email-protection#",
+        c = ".__cf_email__",
+        a = "data-cfemail",
+        i = document.createElement("div");
+    !function() {
+        for (var t = document.getElementsByTagName("a"), r = 0; r < t.length; r++)
+            try {
+                var c = t[r],
+                    a = c.href.indexOf(o);
+                a > -1 && (c.href = "mailto:" + n(c.href, a + o.length))
+            } catch (i) {
+                e(i)
+            }
+    }(), function() {
+        for (var t = document.querySelectorAll(c), r = 0; r < t.length; r++)
+            try {
+                var o = t[r],
+                    i = o.parentNode,
+                    f = o.getAttribute(a);
+                if (f) {
+                    var l = n(f, 0),
+                        u = document.createTextNode(l);
+                    i.replaceChild(u, o)
+                }
+            } catch (d) {
+                e(d)
+            }
+    }()
+}();
+</script>
+</body> </html>
