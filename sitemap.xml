@@ -1,0 +1,27 @@
+<?xml-stylesheet type="text/xsl" href="https://ghost.im/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://ghost.im/</loc>
+    <lastmod>2020-07-26T17:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ghost.im/post/</loc>
+    <lastmod>2020-07-26T17:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ghost.im/post/blog-created/</loc>
+    <lastmod>2020-07-26T17:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ghost.im/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ghost.im/tags/</loc>
+  </url>
+  
+</urlset>

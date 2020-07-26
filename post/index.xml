@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on GhostIAm Blog</title>
+    <link>https://ghost.im/post/</link>
+    <description>Recent content in Posts on GhostIAm Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    <lastBuildDate>Sun, 26 Jul 2020 17:30:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://ghost.im/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Блог создан</title>
+      <link>https://ghost.im/post/blog-created/</link>
+      <pubDate>Sun, 26 Jul 2020 17:30:00 +0900</pubDate>
+      
+      <guid>https://ghost.im/post/blog-created/</guid>
+      <description>Свершилось. Наконец-то, я настроил блог как мне нужно, но чую, что баги ещё повылазят.
+Зачем мне блог? Бывает, настроишь, что-нибудь эдакое, проходит время, и все грабли, на которые наступал, забылись и заросли травой. Чтобы повторить то же самое, что делал полгода-год назад, нужно снова проходится по тем же граблям, тратя время и нервы. А если были бы записи&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>
