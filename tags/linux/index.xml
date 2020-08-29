@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>Настройка UPS на Linux</title>
+      <title>Настройка ИБП на Linux</title>
       <link>https://ghost.im/post/linux-ups/</link>
       <pubDate>Sat, 29 Aug 2020 06:15:27 +0900</pubDate>
       
       <guid>https://ghost.im/post/linux-ups/</guid>
-      <description>&lt;p&gt;Несколько лет назад, для резервного питания роутера и Orange Pi, я покупал ИБП &lt;a href=&#34;http://pcm.ru/catalog/item/1484&#34;&gt;Powercom WOW-700U&lt;/a&gt;. Хороший, дешёвый девайс, имеет USB порт, автоматически включается при появлении напряжения, не ест из розетки лишнего электричества, так как тип ИБП &amp;ldquo;резервный&amp;rdquo;, что очень хорошо, когда он должен быть включён 24/7, в отличии от моего основного ИБП&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, который не прочь покушать ~50 Ватт из-за своей &amp;ldquo;интерактивной&amp;rdquo; технологии.&lt;/p&gt;
+      <description>&lt;h2 id=&#34;предисловие&#34;&gt;Предисловие&lt;/h2&gt;
+&lt;p&gt;Несколько лет назад, для резервного питания роутера и Orange Pi, я покупал ИБП &lt;a href=&#34;http://pcm.ru/catalog/item/1484&#34;&gt;Powercom WOW-700U&lt;/a&gt;. Хороший, дешёвый девайс, имеет USB порт, автоматически включается при появлении напряжения, не ест из розетки лишнего электричества, так как тип ИБП &amp;ldquo;резервный&amp;rdquo;, что очень хорошо, когда он должен быть включён 24/7, в отличии от моего основного ИБП&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, который не прочь покушать ~50 Ватт из-за своей &amp;ldquo;интерактивной&amp;rdquo; технологии.&lt;/p&gt;
 &lt;p&gt;Время шло и Orange Pi сначала заменилась на мини-ПК на атоме, а потом и старый ПК стал сервером.&lt;/p&gt;
 &lt;p&gt;Но давайте перейдём уже к сути и самой настройке ИБП на Debian-like Linux!&lt;/p&gt;
 

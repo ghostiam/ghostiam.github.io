@@ -78,3 +78,12 @@ code[class^="language-"], .chroma code {
 .post .post-content>table td {
 	background-color: #f0f2f5
 }
+
+.post .post-content .read-more {
+	text-align: center;
+}
+
+.post .post-content .read-more .read-more-link {
+	width: 100%;
+	display: block;
+}
