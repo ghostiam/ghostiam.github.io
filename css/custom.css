@@ -87,3 +87,7 @@ code[class^="language-"], .chroma code {
 	width: 100%;
 	display: block;
 }
+
+.header .logo-wrapper .logo {
+	font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+}
