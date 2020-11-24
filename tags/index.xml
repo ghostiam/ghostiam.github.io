@@ -6,17 +6,31 @@
     <description>Recent content in Tags on GhostIAm Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Sat, 29 Aug 2020 06:15:27 +0900</lastBuildDate>
-    
-	<atom:link href="https://ghost.im/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Nov 2020 05:30:00 +0900</lastBuildDate><atom:link href="https://ghost.im/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
       <link>https://ghost.im/tags/linux/</link>
-      <pubDate>Sat, 29 Aug 2020 06:15:27 +0900</pubDate>
+      <pubDate>Wed, 25 Nov 2020 05:30:00 +0900</pubDate>
       
       <guid>https://ghost.im/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lvm</title>
+      <link>https://ghost.im/tags/lvm/</link>
+      <pubDate>Wed, 25 Nov 2020 05:30:00 +0900</pubDate>
+      
+      <guid>https://ghost.im/tags/lvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>raid</title>
+      <link>https://ghost.im/tags/raid/</link>
+      <pubDate>Wed, 25 Nov 2020 05:30:00 +0900</pubDate>
+      
+      <guid>https://ghost.im/tags/raid/</guid>
       <description></description>
     </item>
     

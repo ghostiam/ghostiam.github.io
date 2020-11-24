@@ -31,7 +31,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.74.3" />
+<meta name="generator" content="Hugo 0.78.2" />
 
 
 <link rel="canonical" href="https://ghost.im/" />
@@ -66,7 +66,7 @@
 <meta property="og:description" content="GhostIAm blog" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ghost.im/" />
-<meta property="og:updated_time" content="2020-08-29T09:37:27+09:00" />
+<meta property="og:updated_time" content="2020-11-25T05:30:00+09:00" />
 <meta itemprop="name" content="GhostIAm Blog">
 <meta itemprop="description" content="GhostIAm blog">
 <meta name="twitter:card" content="summary"/>
@@ -82,6 +82,17 @@
   <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
 <![endif]-->
 
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-MVC07BJXGZ', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
@@ -110,7 +121,7 @@
         
           
           
-            <a class="menu-item-link" href="https://ghost.im/post/">Архив</a>
+            <a class="menu-item-link" href="https://ghost.im/posts/">Архив</a>
           
         
       </li><li class="mobile-menu-item">
@@ -169,7 +180,7 @@
         
           
           
-            <a class="menu-item-link" href="https://ghost.im/post/">Архив</a>
+            <a class="menu-item-link" href="https://ghost.im/posts/">Архив</a>
           
 
         
@@ -224,7 +235,62 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/linux-ups/">Настройка ИБП на Linux</a>
+      <a class="post-link" href="/posts/linux-lvm/">Настраиваем LVM, используем LVM RAID 1, тестируем</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2020-11-25" class="post-time">
+        2020-11-25
+      </time>
+      <div class="post-category">
+          <a href="https://ghost.im/categories/linux/"> linux </a>
+          
+        </div>
+      <span class="more-meta"> 1275 слов </span>
+      <span class="more-meta"> 6 мин. чтения </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      <h2 id="предисловие">Предисловие</h2>
+<p>Вот и пришла пора увеличить место на своём домашнем сервере, для этого было куплено 2 диска разных производителей, но одинакового объёма.<br>
+Захотелось сделать soft RAID1, но мне не очень подходит mdadm, так как я хочу иметь более гибкое зеркало, которое можно будет легко расширить в будущем, а не выделять сразу большой объём.<br>
+Решил попытать счастья с LVM RAID, но информации по нему, в сжатом виде, мало, в основном всё заканчивает на том, как его создать. Попробую исправить этот пробел.</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/image/linux-lvm/1.jpg" alt="Мои диски"/>
+    </div>
+    <a href="/image/linux-lvm/1.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Мои диски</p>
+      </figcaption>
+  </figure>
+</div>
+    </div>
+      
+    <div class="read-more">
+      <a href="/posts/linux-lvm/" class="read-more-link">Читать дальше</a>
+    </div>
+      
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
+      <a class="post-link" href="/posts/linux-ups/">Настройка ИБП на Linux</a>
     </h1>
     
     <div class="post-meta">
@@ -267,7 +333,7 @@
     </div>
       
     <div class="read-more">
-      <a href="/post/linux-ups/" class="read-more-link">Читать дальше</a>
+      <a href="/posts/linux-ups/" class="read-more-link">Читать дальше</a>
     </div>
       
     
@@ -279,7 +345,7 @@
   <header class="post-header">
     <h1 class="post-title">
       
-      <a class="post-link" href="/post/blog-created/">Блог создан</a>
+      <a class="post-link" href="/posts/blog-created/">Блог создан</a>
     </h1>
     
     <div class="post-meta">
@@ -412,6 +478,7 @@
   
     <span>
       <p><a class="theme-link" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Лицензия Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Это произведение доступно по лицензии<br><a class="theme-link" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>.</p>
+
     </span>
   
 </div>

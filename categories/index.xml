@@ -6,15 +6,11 @@
     <description>Recent content in Categories on GhostIAm Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Sat, 29 Aug 2020 06:15:27 +0900</lastBuildDate>
-    
-	<atom:link href="https://ghost.im/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 25 Nov 2020 05:30:00 +0900</lastBuildDate><atom:link href="https://ghost.im/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
       <link>https://ghost.im/categories/linux/</link>
-      <pubDate>Sat, 29 Aug 2020 06:15:27 +0900</pubDate>
+      <pubDate>Wed, 25 Nov 2020 05:30:00 +0900</pubDate>
       
       <guid>https://ghost.im/categories/linux/</guid>
       <description></description>

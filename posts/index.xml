@@ -2,21 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on GhostIAm Blog</title>
-    <link>https://ghost.im/post/</link>
+    <link>https://ghost.im/posts/</link>
     <description>Recent content in Posts on GhostIAm Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Sat, 29 Aug 2020 06:15:27 +0900</lastBuildDate>
-    
-	<atom:link href="https://ghost.im/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 25 Nov 2020 05:30:00 +0900</lastBuildDate><atom:link href="https://ghost.im/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Настраиваем LVM, используем LVM RAID 1, тестируем</title>
+      <link>https://ghost.im/posts/linux-lvm/</link>
+      <pubDate>Wed, 25 Nov 2020 05:30:00 +0900</pubDate>
+      
+      <guid>https://ghost.im/posts/linux-lvm/</guid>
+      <description>&lt;h2 id=&#34;предисловие&#34;&gt;Предисловие&lt;/h2&gt;
+&lt;p&gt;Вот и пришла пора увеличить место на своём домашнем сервере, для этого было куплено 2 диска разных производителей, но одинакового объёма.&lt;br&gt;
+Захотелось сделать soft RAID1, но мне не очень подходит mdadm, так как я хочу иметь более гибкое зеркало, которое можно будет легко расширить в будущем, а не выделять сразу большой объём.&lt;br&gt;
+Решил попытать счастья с LVM RAID, но информации по нему, в сжатом виде, мало, в основном всё заканчивает на том, как его создать. Попробую исправить этот пробел.&lt;/p&gt;
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://ghost.im/css/hugo-easy-gallery.css&#34; /&gt;
+&lt;div class=&#34;box&#34;&gt;
+&lt;figure  itemprop=&#34;associatedMedia&#34;
+  itemscope itemtype=&#34;http://schema.org/ImageObject&#34; &gt;
+    &lt;div class=&#34;img&#34;&gt;
+      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://ghost.im/image/linux-lvm/1.jpg&#34; alt=&#34;Мои диски&#34;/&gt;
+    &lt;/div&gt;
+    &lt;a href=&#34;https://ghost.im/image/linux-lvm/1.jpg&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+      &lt;figcaption&gt;
+          &lt;p&gt;Мои диски&lt;/p&gt;
+      &lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>Настройка ИБП на Linux</title>
-      <link>https://ghost.im/post/linux-ups/</link>
+      <link>https://ghost.im/posts/linux-ups/</link>
       <pubDate>Sat, 29 Aug 2020 06:15:27 +0900</pubDate>
       
-      <guid>https://ghost.im/post/linux-ups/</guid>
+      <guid>https://ghost.im/posts/linux-ups/</guid>
       <description>&lt;h2 id=&#34;предисловие&#34;&gt;Предисловие&lt;/h2&gt;
 &lt;p&gt;Несколько лет назад, для резервного питания роутера и Orange Pi, я покупал ИБП &lt;a href=&#34;http://pcm.ru/catalog/item/1484&#34;&gt;Powercom WOW-700U&lt;/a&gt;. Хороший, дешёвый девайс, имеет USB порт, автоматически включается при появлении напряжения, не ест из розетки лишнего электричества, так как тип ИБП &amp;ldquo;резервный&amp;rdquo;, что очень хорошо, когда он должен быть включён 24/7, в отличии от моего основного ИБП&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, который не прочь покушать ~50 Ватт из-за своей &amp;ldquo;интерактивной&amp;rdquo; технологии.&lt;/p&gt;
 &lt;p&gt;Время шло и Orange Pi сначала заменилась на мини-ПК на атоме, а потом и старый ПК стал сервером.&lt;/p&gt;
@@ -39,10 +61,10 @@
     
     <item>
       <title>Блог создан</title>
-      <link>https://ghost.im/post/blog-created/</link>
+      <link>https://ghost.im/posts/blog-created/</link>
       <pubDate>Sun, 26 Jul 2020 17:30:00 +0900</pubDate>
       
-      <guid>https://ghost.im/post/blog-created/</guid>
+      <guid>https://ghost.im/posts/blog-created/</guid>
       <description>&lt;h3 id=&#34;свершилось&#34;&gt;Свершилось.&lt;/h3&gt;
 &lt;p&gt;Наконец-то, я настроил блог как мне нужно, но чую, что баги ещё повылазят.&lt;/p&gt;
 &lt;h3 id=&#34;зачем-мне-блог&#34;&gt;Зачем мне блог?&lt;/h3&gt;
