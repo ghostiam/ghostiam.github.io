@@ -88,6 +88,6 @@ code[class^="language-"], .chroma code {
 	display: block;
 }
 
-.header .logo-wrapper .logo {
-	font-family: Athelas,STHeiti,Microsoft Yahei,serif;
+.header .logo-wrapper .logo, .mobile-navbar .mobile-header-logo .logo {
+	font-family: LiSu,helvetica,sans-serif,serif;
 }
