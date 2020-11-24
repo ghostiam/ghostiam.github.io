@@ -144,17 +144,18 @@
 <![endif]-->
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-MVC07BJXGZ', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MVC07BJXGZ"></script>
+<script>
+  var config = { 'send_page_view': true };
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+  gtag('title', 'Настройка ИБП на Linux');
+  gtag('permalink', 'https:\/\/ghost.im\/posts\/linux-ups\/');
+  gtag('config', 'G-MVC07BJXGZ', config);
+</script>
 
 
 </head>
