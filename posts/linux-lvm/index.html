@@ -358,17 +358,16 @@
 </div>
 
 <h2 id="lvm">LVM</h2>
-<p>Нам понадобится 2 диска, если вы собираетесь настраивать RAID, если нет, то просто пропускайте чести с настройкой второго диска.</p>
+<p>Нам понадобится 2 диска, если вы собираетесь настраивать RAID, если нет, то просто пропускайте части с настройкой второго диска.</p>
 <p>Для тестирования необязательно иметь настоящие диски, можно использовать обычные файлы: 
 <a  target="_blank" rel="external noopener" href="https://www.thegeekdiary.com/how-to-create-virtual-block-device-loop-device-filesystem-in-linux/">How to create virtual block device (loop device/filesystem) in Linux</a></p>
 <div class="shortcode-notice note">
   <div class="shortcode-notice-title note">
     
-      note
+      Заметка
     
   </div>
   <p>Имена дисков заменены на <code>sdX, sdY, sdZ</code>, во избежание потери данных на реальных носителях.</p>
-  <p></p>
 </div>
 
 <h3 id="инициализация">Инициализация</h3>
@@ -386,11 +385,10 @@
 </div><div class="shortcode-notice warning">
   <div class="shortcode-notice-title warning">
     
-      warning
+      Предупреждение
     
   </div>
   <p>Убедитесь, что вы используете верный диск в командах, так как это уничтожит все данные на диске!</p>
-  <p></p>
 </div>
 
 <div class="highlight"><div class="chroma">
@@ -561,11 +559,10 @@ lvmirror            vgdata rwi-aor--- 3.00g 100.00   lvmirror_rimage_0(0),lvmirr
 <div class="shortcode-notice warning">
   <div class="shortcode-notice-title warning">
     
-      warning
+      Предупреждение
     
   </div>
   <p>Убедитесь, что вы используете верный диск в командах, так как это может привести к потере данные на диске!</p>
-  <p></p>
 </div>
 </p>
 <h3 id="отвал-диска-ресинхронизация-и-его-замена">Отвал диска (ресинхронизация) и его замена</h3>

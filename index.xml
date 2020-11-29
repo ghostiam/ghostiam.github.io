@@ -38,17 +38,16 @@
 &lt;/div&gt;
 
 &lt;h2 id=&#34;lvm&#34;&gt;LVM&lt;/h2&gt;
-&lt;p&gt;Нам понадобится 2 диска, если вы собираетесь настраивать RAID, если нет, то просто пропускайте чести с настройкой второго диска.&lt;/p&gt;
+&lt;p&gt;Нам понадобится 2 диска, если вы собираетесь настраивать RAID, если нет, то просто пропускайте части с настройкой второго диска.&lt;/p&gt;
 &lt;p&gt;Для тестирования необязательно иметь настоящие диски, можно использовать обычные файлы: 
 &lt;a  target=&#34;_blank&#34; rel=&#34;external noopener&#34; href=&#34;https://www.thegeekdiary.com/how-to-create-virtual-block-device-loop-device-filesystem-in-linux/&#34;&gt;How to create virtual block device (loop device/filesystem) in Linux&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;shortcode-notice note&#34;&gt;
   &lt;div class=&#34;shortcode-notice-title note&#34;&gt;
     
-      note
+      Заметка
     
   &lt;/div&gt;
   &lt;p&gt;Имена дисков заменены на &lt;code&gt;sdX, sdY, sdZ&lt;/code&gt;, во избежание потери данных на реальных носителях.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;h3 id=&#34;инициализация&#34;&gt;Инициализация&lt;/h3&gt;
@@ -66,11 +65,10 @@
 &lt;/div&gt;&lt;div class=&#34;shortcode-notice warning&#34;&gt;
   &lt;div class=&#34;shortcode-notice-title warning&#34;&gt;
     
-      warning
+      Предупреждение
     
   &lt;/div&gt;
   &lt;p&gt;Убедитесь, что вы используете верный диск в командах, так как это уничтожит все данные на диске!&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -241,11 +239,10 @@ lvmirror            vgdata rwi-aor--- 3.00g 100.00   lvmirror_rimage_0(0),lvmirr
 &lt;div class=&#34;shortcode-notice warning&#34;&gt;
   &lt;div class=&#34;shortcode-notice-title warning&#34;&gt;
     
-      warning
+      Предупреждение
     
   &lt;/div&gt;
   &lt;p&gt;Убедитесь, что вы используете верный диск в командах, так как это может привести к потере данные на диске!&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/p&gt;
 &lt;h3 id=&#34;отвал-диска-ресинхронизация-и-его-замена&#34;&gt;Отвал диска (ресинхронизация) и его замена&lt;/h3&gt;
@@ -838,11 +835,10 @@ NOTIFYCMD /usr/sbin/upssched
 &lt;div class=&#34;shortcode-notice warning&#34;&gt;
   &lt;div class=&#34;shortcode-notice-title warning&#34;&gt;
     
-      warning
+      Предупреждение
     
   &lt;/div&gt;
   &lt;p&gt;Обязательно проверьте с помощью команды &lt;code&gt;which upssched&lt;/code&gt;, что у вас такой же путь до &lt;code&gt;upssched&lt;/code&gt;, что и у меня.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Редактируем настройки &lt;code&gt;upssched&lt;/code&gt; в &lt;code&gt;/etc/nut/upssched.conf&lt;/code&gt;, изменяем/добавляем:&lt;/p&gt;
