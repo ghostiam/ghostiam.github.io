@@ -91,3 +91,8 @@ code[class^="language-"], .chroma code {
 .header .logo-wrapper .logo, .mobile-navbar .mobile-header-logo .logo {
 	font-family: LiSu,helvetica,sans-serif,serif;
 }
+
+figure > .img {
+  margin: auto;
+  width: fit-content;
+}

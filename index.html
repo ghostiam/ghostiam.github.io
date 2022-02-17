@@ -224,6 +224,78 @@
   <header class="post-header">
     <h1 class="post-title">
       
+      <a class="post-link" href="/posts/clickhouse-restore/">ClickHouse восстановление</a>
+    </h1>
+    
+    <div class="post-meta">
+      <time datetime="2022-02-17" class="post-time">
+        2022-02-17
+      </time>
+      
+      <span class="more-meta"> 834 слова </span>
+      <span class="more-meta"> 4 мин. чтения </span>
+      
+      
+      
+    </div>
+  </header>
+  
+  <div class="post-content">
+    
+    <div class="post-summary">
+      <p>Восстановление репликации или поехавшей агрегации, после того, как пропали данные в ZooKeeper, <strong>без конвертации</strong> реплицированной таблицы в нереплицируемую <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>Если в логах у вас ошибки:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">Table is in readonly mode
+Cannot allocate block number in ZooKeeper: Coordination::Exception: Transaction failed (No node)
+Coordination::Exception: Can&#39;t get data for node /clickhouse/tables/*/*/log: node doesn&#39;t exist (No node).
+</code></pre></td></tr></table>
+</div>
+</div><p>А при восстановлении или создании агрегации с <code>POPULATE</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">Memory limit (for query) exceeded
+</code></pre></td></tr></table>
+</div>
+</div><p>то эта статья для вас.</p>
+
+<link rel="stylesheet" href="/css/hugo-easy-gallery.css" />
+<div class="box">
+<figure  itemprop="associatedMedia"
+  itemscope itemtype="http://schema.org/ImageObject" >
+    <div class="img">
+      <img itemprop="thumbnail" src="/image/clickhouse-restore/clickhouse.svg" alt="ClickHouse, не болей"/>
+    </div>
+    <a href="/image/clickhouse-restore/clickhouse.svg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>ClickHouse, не болей</p>
+      </figcaption>
+  </figure>
+</div>
+    </div>
+      
+    <div class="read-more">
+      <a href="/posts/clickhouse-restore/" class="read-more-link">Читать дальше</a>
+    </div>
+      
+    
+  </div>
+</article>
+
+  
+    <article class="post bg-white">
+  <header class="post-header">
+    <h1 class="post-title">
+      
       <a class="post-link" href="/posts/linux-lvm/">Настраиваем LVM, используем LVM RAID 1, тестируем</a>
     </h1>
     
