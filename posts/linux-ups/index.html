@@ -36,7 +36,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.78.2" />
+<meta name="generator" content="Hugo 0.92.2" />
 
 
 <link rel="canonical" href="https://ghost.im/posts/linux-ups/" />
@@ -86,9 +86,10 @@
   
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ghost.im/posts/linux-ups/" />
+<meta property="og:url" content="https://ghost.im/posts/linux-ups/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-29T06:15:27+09:00" />
 <meta property="article:modified_time" content="2020-08-29T09:37:27+09:00" />
+
 <meta itemprop="name" content="Настройка ИБП на Linux">
 <meta itemprop="description" content="Предисловие
 Несколько лет назад, для резервного питания роутера и Orange Pi, я покупал ИБП Powercom WOW-700U. Хороший, дешёвый девайс, имеет USB порт, автоматически включается при появлении напряжения, не ест из розетки лишнего электричества, так как тип ИБП &ldquo;резервный&rdquo;, что очень хорошо, когда он должен быть включён 24/7, в отличии от моего основного ИБП1, который не прочь покушать ~50 Ватт из-за своей &ldquo;интерактивной&rdquo; технологии.
@@ -106,15 +107,10 @@
           Кадр из мультфильма &#34;Ледниковый период&#34;
       
   
-">
-<meta itemprop="datePublished" content="2020-08-29T06:15:27+09:00" />
+"><meta itemprop="datePublished" content="2020-08-29T06:15:27+09:00" />
 <meta itemprop="dateModified" content="2020-08-29T09:37:27+09:00" />
-<meta itemprop="wordCount" content="856">
-
-
-
-<meta itemprop="keywords" content="linux," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="854">
+<meta itemprop="keywords" content="linux," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Настройка ИБП на Linux"/>
 <meta name="twitter:description" content="Предисловие
 Несколько лет назад, для резервного питания роутера и Orange Pi, я покупал ИБП Powercom WOW-700U. Хороший, дешёвый девайс, имеет USB порт, автоматически включается при появлении напряжения, не ест из розетки лишнего электричества, так как тип ИБП &ldquo;резервный&rdquo;, что очень хорошо, когда он должен быть включён 24/7, в отличии от моего основного ИБП1, который не прочь покушать ~50 Ватт из-за своей &ldquo;интерактивной&rdquo; технологии.
@@ -287,7 +283,7 @@
             <a href="https://ghost.im/categories/linux/"> linux </a>
             
           </div>
-        <span class="more-meta"> 856 слов </span>
+        <span class="more-meta"> 854 слова </span>
           <span class="more-meta"> 5 мин. чтения </span>
 
         
@@ -343,31 +339,31 @@
 <p>Для начала установим NUT:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">apt install nut
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">apt install nut
 </code></pre></td></tr></table>
 </div>
 </div><p>Подключаем наш ИБП к ПК и посмотрим, как он определяется в системе:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">lsusb
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">lsusb
 </code></pre></td></tr></table>
 </div>
 </div><p>Вот как выглядит вывод команды у меня:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">Bus 001 Device 002: ID 8087:8009 Intel Corp.
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">Bus 001 Device 002: ID 8087:8009 Intel Corp.
 Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 Bus 002 Device 019: ID 0d9f:0004 Powercom Co., Ltd
 Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
@@ -376,13 +372,13 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 </div><p>Теперь необходимо сказать NUT, что у нас для него есть ИБП, для этого добавим в конец файла <code>/etc/nut/ups.conf</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">maxretry = 3
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">maxretry = 3
 [ups]
   driver = usbhid-ups
   port = auto
@@ -391,38 +387,38 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 </div><p>Скопируем список udev правил, чтобы разрешить пользователю без прав root использовать данное USB устройство:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">cp /lib/udev/rules.d/62-nut-usbups.rules /etc/udev/rules.d/
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">cp /lib/udev/rules.d/62-nut-usbups.rules /etc/udev/rules.d/
 </code></pre></td></tr></table>
 </div>
 </div><p>В моём случае, в правилах уже был прописан мой ИБП, но если вашего там нет, то просто добавляем в конец файла правило, заменив ID на свои, которые можно посмотреть в выводе команды <code>lsusb</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">ATTR{idVendor}==&#34;0d9f&#34;, ATTR{idProduct}==&#34;0004&#34;, MODE=&#34;664&#34;, GROUP=&#34;nut&#34;
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">ATTR{idVendor}==&#34;0d9f&#34;, ATTR{idProduct}==&#34;0004&#34;, MODE=&#34;664&#34;, GROUP=&#34;nut&#34;
 </code></pre></td></tr></table>
 </div>
 </div><p>Перезапустим udev</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl restart udev
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">systemctl restart udev
 </code></pre></td></tr></table>
 </div>
 </div><p>Необходимо отключить и снова подключить USB кабель к ПК, чтобы правило применилось.</p>
 <p>Переведём NUT в standalone mode, для этого отредактируем файл <code>/etc/nut/nut.conf</code> и заменим стандартное значение на</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">MODE=standalone
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">MODE=standalone
 </code></pre></td></tr></table>
 </div>
 </div><p>Настроим сервер и создадим юзера, который сможет получать данные от ИБП</p>
@@ -430,12 +426,12 @@ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 <p><code>/etc/nut/upsd.conf</code> на</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text"># LISTEN &lt;address&gt; [&lt;port&gt;]
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"># LISTEN &lt;address&gt; [&lt;port&gt;]
 LISTEN 127.0.0.1 3493
 LISTEN ::1 3493
 </code></pre></td></tr></table>
@@ -443,12 +439,12 @@ LISTEN ::1 3493
 </div><p>и <code>/etc/nut/upsd.users</code> на</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">[upsmonitor]
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">[upsmonitor]
 password = 1234
 upsmon master
 </code></pre></td></tr></table>
@@ -457,21 +453,21 @@ upsmon master
 <p>Настроим мониторинг ИБП, который будет выключать ПК при низком заряде батареи, для этого отредактируем файл <code>/etc/nut/upsmon.conf</code>  и добавим в него:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">MONITOR ups@localhost 1 upsmonitor 1234 master
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">MONITOR ups@localhost 1 upsmonitor 1234 master
 </code></pre></td></tr></table>
 </div>
 </div><p>После этого запускаем сервисы</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl start nut-driver
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">systemctl start nut-driver
 systemctl start nut-server
 systemctl start nut-client
 </code></pre></td></tr></table>
@@ -480,23 +476,23 @@ systemctl start nut-client
 <p>Далее, сделаем, чтобы всё автоматически запускалось после рестарта:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl <span class="nb">enable</span> nut-server
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">systemctl <span class="nb">enable</span> nut-server
 systemctl <span class="nb">enable</span> nut-client
 </code></pre></td></tr></table>
 </div>
 </div><p>Но вот с <code>nut-driver</code> так сделать не получится, так как получим ошибку:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">The unit files have no installation config (WantedBy, RequiredBy, Also, Alias
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">The unit files have no installation config (WantedBy, RequiredBy, Also, Alias
 settings in the [Install] section, and DefaultInstance for template units).
 This means they are not meant to be enabled using systemctl.
 </code></pre></td></tr></table>
@@ -505,37 +501,37 @@ This means they are not meant to be enabled using systemctl.
 <p>Ошибку легко исправить, просто немного отредактируем сервис с помощью команды</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl edit nut-driver
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">systemctl edit nut-driver
 </code></pre></td></tr></table>
 </div>
 </div><p>и добавим:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">[Install]
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">[Install]
 WantedBy=multi-user.target
 </code></pre></td></tr></table>
 </div>
 </div><p>Теперь можно включить автозапуск и ошибки не будет:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl <span class="nb">enable</span> nut-driver
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">systemctl <span class="nb">enable</span> nut-driver
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="полезные-команды">Полезные команды</h3>
 <p>Для отладки, могут быть полезны следующие команды:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -550,7 +546,7 @@ WantedBy=multi-user.target
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># информация ИБП</span>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># информация ИБП</span>
 upsc ups
 
 <span class="c1"># запуска драйвера вручную</span>
@@ -573,12 +569,12 @@ upsrw ups
 <p>Для этого, сначала отредактируем файл  <code>/etc/nut/upsmon.conf</code>, добавив туда</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">NOTIFYFLAG ONLINE SYSLOG+WALL+EXEC
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">NOTIFYFLAG ONLINE SYSLOG+WALL+EXEC
 NOTIFYFLAG ONBATT SYSLOG+WALL+EXEC
 NOTIFYCMD /usr/sbin/upssched
 </code></pre></td></tr></table>
@@ -596,14 +592,14 @@ NOTIFYCMD /usr/sbin/upssched
 <p>Редактируем настройки <code>upssched</code> в <code>/etc/nut/upssched.conf</code>, изменяем/добавляем:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">CMDSCRIPT /usr/bin/upssched-cmd
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">CMDSCRIPT /usr/bin/upssched-cmd
 PIPEFN /var/run/nut/upssched.pipe
 LOCKFN /var/run/nut/upssched.lock
 AT ONBATT * START-TIMER shutdown-timer 120
@@ -614,7 +610,7 @@ AT ONLINE * CANCEL-TIMER shutdown-timer
 <p>Создадим скрипт <code>/usr/bin/upssched-cmd</code> со следующим содержанием:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -630,7 +626,7 @@ AT ONLINE * CANCEL-TIMER shutdown-timer
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#! /bin/sh
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#! /bin/sh
 </span><span class="cp"></span>
 <span class="k">case</span> <span class="nv">$1</span> in
     shutdown-timer<span class="o">)</span>
@@ -649,10 +645,10 @@ AT ONLINE * CANCEL-TIMER shutdown-timer
 </div><p>Перезапускаем сервис мониторинга</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">systemctl restart nut-monitor
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">systemctl restart nut-monitor
 </code></pre></td></tr></table>
 </div>
 </div><p>Вы великолепны 🎉.</p>
@@ -660,10 +656,10 @@ AT ONLINE * CANCEL-TIMER shutdown-timer
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>IPPON Smart Power PRO 1000 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>IPPON Smart Power PRO 1000&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Хакеры подобрали пароль к моей почте. Но как они узнали, что я загадал год Канонизации Святого Доминика Григорием IX? Это 1234-й. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Хакеры подобрали пароль к моей почте. Но как они узнали, что я загадал год Канонизации Святого Доминика Григорием IX? Это 1234-й.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -800,7 +796,9 @@ AT ONLINE * CANCEL-TIMER shutdown-timer
 
   <span class="copyright-year">
     &copy;
-    2020
+    
+      2020 -
+    2022
     <span class="heart">
       
       <i class="iconfont">

@@ -36,7 +36,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.78.2" />
+<meta name="generator" content="Hugo 0.92.2" />
 
 
 <link rel="canonical" href="https://ghost.im/posts/linux-lvm/" />
@@ -86,9 +86,10 @@
   
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ghost.im/posts/linux-lvm/" />
+<meta property="og:url" content="https://ghost.im/posts/linux-lvm/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-25T05:30:00+09:00" />
 <meta property="article:modified_time" content="2020-11-25T05:30:00+09:00" />
+
 <meta itemprop="name" content="Настраиваем LVM, используем LVM RAID 1, тестируем">
 <meta itemprop="description" content="Предисловие
 Вот и пришла пора увеличить место на своём домашнем сервере, для этого было куплено 2 диска разных производителей, но одинакового объёма.
@@ -106,15 +107,10 @@
           Мои диски
       
   
-">
-<meta itemprop="datePublished" content="2020-11-25T05:30:00+09:00" />
+"><meta itemprop="datePublished" content="2020-11-25T05:30:00+09:00" />
 <meta itemprop="dateModified" content="2020-11-25T05:30:00+09:00" />
-<meta itemprop="wordCount" content="1275">
-
-
-
-<meta itemprop="keywords" content="linux,lvm,raid," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="wordCount" content="1271">
+<meta itemprop="keywords" content="linux,lvm,raid," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Настраиваем LVM, используем LVM RAID 1, тестируем"/>
 <meta name="twitter:description" content="Предисловие
 Вот и пришла пора увеличить место на своём домашнем сервере, для этого было куплено 2 диска разных производителей, но одинакового объёма.
@@ -287,7 +283,7 @@
             <a href="https://ghost.im/categories/linux/"> linux </a>
             
           </div>
-        <span class="more-meta"> 1275 слов </span>
+        <span class="more-meta"> 1271 слово </span>
           <span class="more-meta"> 6 мин. чтения </span>
 
         
@@ -376,10 +372,10 @@
 <p>Для разбивки диска я буду использовать <code>gdisk</code>, обычно уже установлен, но если что, устанавливается командой:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">apt install gdisk
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt install gdisk
 </code></pre></td></tr></table>
 </div>
 </div><div class="shortcode-notice warning">
@@ -393,15 +389,15 @@
 
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">gdisk /dev/sdX
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">gdisk /dev/sdX
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -421,7 +417,7 @@
 </span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Смотрим разделы и проверяем, тот ли мы диск выбрали.</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Смотрим разделы и проверяем, тот ли мы диск выбрали.</span>
 p
 
 <span class="c1"># Создаём пустую GUID partition table.</span>
@@ -445,12 +441,12 @@ w <span class="c1"># жмём `y`, чтобы подтвердить запис�
 <p>Добавляем диски в LVM</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pvcreate /dev/sdX1 /dev/sdY1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pvcreate /dev/sdX1 /dev/sdY1
 <span class="c1"># или коротко</span>
 pvcreate /dev/sd<span class="o">[</span>XY<span class="o">]</span><span class="m">1</span>
 </code></pre></td></tr></table>
@@ -458,12 +454,12 @@ pvcreate /dev/sd<span class="o">[</span>XY<span class="o">]</span><span class="m
 </div><p>Создаём группу <code>vgdata</code> из двух дисков</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vgcreate vgdata /dev/sdX1 /dev/sdY1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vgcreate vgdata /dev/sdX1 /dev/sdY1
 <span class="c1"># или коротко</span>
 vgcreate vgdata /dev/sd<span class="o">[</span>XY<span class="o">]</span><span class="m">1</span>
 </code></pre></td></tr></table>
@@ -472,12 +468,12 @@ vgcreate vgdata /dev/sd<span class="o">[</span>XY<span class="o">]</span><span c
 <p>Создаём простой логический диск с именем <code>lv0</code> на 3ГБ:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvcreate --size 3G --name lv0 vgdata
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvcreate --size 3G --name lv0 vgdata
 <span class="c1"># или коротко</span>
 lvcreate -L 3G -n lv0 vgdata
 </code></pre></td></tr></table>
@@ -486,12 +482,12 @@ lvcreate -L 3G -n lv0 vgdata
 <p>Создаём логический диск с RAID 1 под именем <code>lvmirror</code> на 3ГБ:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvcreate --size 3G --name lvmirror --mirrors <span class="m">1</span> vgdata
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvcreate --size 3G --name lvmirror --mirrors <span class="m">1</span> vgdata
 <span class="c1"># или коротко</span>
 lvcreate -L 3G -n lvmirror -m1 vgdata
 </code></pre></td></tr></table>
@@ -500,10 +496,10 @@ lvcreate -L 3G -n lvmirror -m1 vgdata
 <h3 id="смотрим-что-получилось">Смотрим что получилось</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices
 </code></pre></td></tr></table>
 </div>
 </div><p>Колонка  <code>Cpy%Sync</code> показывает, процент синхронизации, а <code>Devices</code>, устройства, на которых находятся данные логического диска.</p>
@@ -511,19 +507,19 @@ lvcreate -L 3G -n lvmirror -m1 vgdata
 <p>Осталось создать файловую систему:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mkfs.ext4 /dev/vgdata/lvmirror
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mkfs.ext4 /dev/vgdata/lvmirror
 </code></pre></td></tr></table>
 </div>
 </div><p>И можно примонтировать и пользоваться</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">mount /dev/vgdata/lvmirror /mnt/
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mount /dev/vgdata/lvmirror /mnt/
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="тестируем-lvm-raid-1-и-учимся-чинить">Тестируем LVM RAID 1 и учимся чинить</h2>
@@ -531,15 +527,15 @@ lvcreate -L 3G -n lvmirror -m1 vgdata
 <p>Для начала, посмотрим, как у нас всё выглядит до начала тестов:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices,lv_health_status
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices,lv_health_status
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -547,7 +543,7 @@ lvcreate -L 3G -n lvmirror -m1 vgdata
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">LV                  VG     Attr       LSize Cpy%Sync Devices                                   Health
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">LV                  VG     Attr       LSize Cpy%Sync Devices                                   Health
 lvmirror            vgdata rwi-aor--- 3.00g 100.00   lvmirror_rimage_0(0),lvmirror_rimage_1(0)
 [lvmirror_rimage_0] vgdata iwi-aor--- 3.00g          /dev/sdX1(1)
 [lvmirror_rimage_1] vgdata iwi-aor--- 3.00g          /dev/sdY1(1)
@@ -571,43 +567,43 @@ lvmirror            vgdata rwi-aor--- 3.00g 100.00   lvmirror_rimage_0(0),lvmirr
 <p>Отключаем диск <code>sdX</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> offline &gt; /sys/block/sdX/device/state
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> offline &gt; /sys/block/sdX/device/state
 </code></pre></td></tr></table>
 </div>
 </div><p>Теперь, чтобы LVM понял, что с диском что-то не то, нужно записать на диск данные.</p>
 <p>Если FS есть:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="nb">test</span> &gt; /mnt/test.txt 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="nb">test</span> &gt; /mnt/test.txt 
 </code></pre></td></tr></table>
 </div>
 </div><p>Если FS нет(<strong>эта команда уничтожит FS, если она есть!</strong>):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/vgdata/lvmirror <span class="nv">count</span><span class="o">=</span><span class="m">10</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/vgdata/lvmirror <span class="nv">count</span><span class="o">=</span><span class="m">10</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Смотрим результат:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices,lv_health_status
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices,lv_health_status
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -622,7 +618,7 @@ lvmirror            vgdata rwi-aor--- 3.00g 100.00   lvmirror_rimage_0(0),lvmirr
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">/dev/sdX: open failed: No such device or address
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">/dev/sdX: open failed: No such device or address
 /dev/sdX: open failed: No such device or address
 /dev/sdX: open failed: No such device or address
 WARNING: Couldn&#39;t find device with uuid VkIceg-2ZVd-tTuZ-HgHz-EblT-5GwQ-oH3gKM.
@@ -642,42 +638,42 @@ lvmirror            vgdata rwi-aor-p- 3.00g 100.00   lvmirror_rimage_0(0),lvmirr
 <p>FS есть, пишем в файл <code>/mnt/random.file</code>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/mnt/random.file <span class="nv">bs</span><span class="o">=</span>10M <span class="nv">count</span><span class="o">=</span><span class="m">10</span> 
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/mnt/random.file <span class="nv">bs</span><span class="o">=</span>10M <span class="nv">count</span><span class="o">=</span><span class="m">10</span> 
 </code></pre></td></tr></table>
 </div>
 </div><p>FS нет(<strong>эта команда уничтожит FS, если она есть!</strong>):</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/vgdata/lvmirror <span class="nv">bs</span><span class="o">=</span>10M <span class="nv">count</span><span class="o">=</span><span class="m">10</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/vgdata/lvmirror <span class="nv">bs</span><span class="o">=</span>10M <span class="nv">count</span><span class="o">=</span><span class="m">10</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Включаем диск <code>sdX</code> обратно:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> running &gt; /sys/block/sdX/device/state
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> running &gt; /sys/block/sdX/device/state
 </code></pre></td></tr></table>
 </div>
 </div><p>Смотрим результат:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices,lv_health_status
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices,lv_health_status
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -685,7 +681,7 @@ lvmirror            vgdata rwi-aor-p- 3.00g 100.00   lvmirror_rimage_0(0),lvmirr
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">LV                  VG     Attr       LSize Cpy%Sync Devices                                   Health
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">LV                  VG     Attr       LSize Cpy%Sync Devices                                   Health
 lvmirror            vgdata rwi-aor-r- 3.00g 100.00   lvmirror_rimage_0(0),lvmirror_rimage_1(0) refresh needed
 [lvmirror_rimage_0] vgdata Iwi-aor-r- 3.00g          /dev/sdX1(1)                              refresh needed
 [lvmirror_rimage_1] vgdata iwi-aor--- 3.00g          /dev/sdY1(1)
@@ -698,30 +694,30 @@ lvmirror            vgdata rwi-aor-r- 3.00g 100.00   lvmirror_rimage_0(0),lvmirr
 <p>Запускаем синхронизацию командой:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvchange --refresh /dev/vgdata/lvmirror
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvchange --refresh /dev/vgdata/lvmirror
 </code></pre></td></tr></table>
 </div>
 </div><p>Но если диск выпал, я бы рекомендовал его заменить на новый, проинициализировав его <a href="#инициализация">как в начале статьи</a> и добавив в PV и VG:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pvcreate /dev/sdZ1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pvcreate /dev/sdZ1
 vgextend vgdata /dev/sdZ1
 </code></pre></td></tr></table>
 </div>
 </div><p>И заменив диск у зеркала:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvconvert --replace /dev/sdX1 /dev/vgdata/lvmirror /dev/sdZ1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvconvert --replace /dev/sdX1 /dev/vgdata/lvmirror /dev/sdZ1
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="замена-мёртвого-диска">Замена мёртвого диска</h3>
@@ -729,19 +725,19 @@ vgextend vgdata /dev/sdZ1
 <strong>Эта команда уничтожит данные на диске!</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">bs</span><span class="o">=</span>10M <span class="nv">count</span><span class="o">=</span><span class="m">1</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>/dev/sdX <span class="nv">bs</span><span class="o">=</span>10M <span class="nv">count</span><span class="o">=</span><span class="m">1</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>При вызове</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices,lv_health_status
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvs -a -o +devices,lv_health_status
 </code></pre></td></tr></table>
 </div>
 </div><p>Мы увидим тот же результат, что и при отвале диска, статус <code>Health</code> стал <code>partial</code>, но чинится это по другому.</p>
@@ -749,62 +745,62 @@ vgextend vgdata /dev/sdZ1
 <p>Удалим старый диск из VG</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vgreduce --removemissing --force vgdata
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vgreduce --removemissing --force vgdata
 </code></pre></td></tr></table>
 </div>
 </div><p>Так как мы стёрли заголовки диска, нам придётся <a href="#инициализация">проинициализировать</a> диск заново и добавить его в PV и VG:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">pvcreate /dev/sdX1
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">pvcreate /dev/sdX1
 vgextend vgdata /dev/sdX1
 </code></pre></td></tr></table>
 </div>
 </div><p>И нужно починить наше зеркало</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvconvert --repair /dev/vgdata/lvmirror
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvconvert --repair /dev/vgdata/lvmirror
 </code></pre></td></tr></table>
 </div>
 </div><p>Автоматически запуститься ресинхронизация.</p>
 <h3 id="конвертируем-логический-диск-из-raid-1-в-обычный">Конвертируем логический диск из RAID 1 в обычный</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvconvert -m0 /dev/vgdata/lvmirror
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvconvert -m0 /dev/vgdata/lvmirror
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="конвертируем-логический-диск-из-обычного-в-raid-1">Конвертируем логический диск из обычного в RAID 1</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">lvconvert -m1 /dev/vgdata/lvmirror
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">lvconvert -m1 /dev/vgdata/lvmirror
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="увеличиваем-размер-диска-с-зеркалом">Увеличиваем размер диска с зеркалом</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">umount /dev/vgdata/lvmirror
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">umount /dev/vgdata/lvmirror
 <span class="c1"># Добавляем 5GB к диску</span>
 lvresize --resizefs --size +5G /dev/vgdata/lvmirror
 <span class="c1"># Смотрим результат</span>
@@ -814,14 +810,14 @@ lvs
 </div><h3 id="уменьшаем-размер-диска-с-зеркалом">Уменьшаем размер диска с зеркалом</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">umount /dev/vgdata/lvmirror
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">umount /dev/vgdata/lvmirror
 <span class="c1"># Делаем диск равным 4GB</span>
 lvresize --resizefs --size 4G /dev/vgdata/lvmirror
 <span class="c1"># Смотрим результат</span>
@@ -838,12 +834,12 @@ lvs
 <p>Когда отключил диск, я решил удалить лишнее зеркало (у меня было 2 LV зеркальных), после подключения диска обратно, у меня появилась ошибка при любой команде LVM:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-text" data-lang="text">WARNING: ignoring metadata seqno 20 on /dev/sdX1 for seqno 21 on /dev/sdY1 for VG vgdata.
+<pre tabindex="0" class="chroma"><code class="language-text" data-lang="text">WARNING: ignoring metadata seqno 20 on /dev/sdX1 for seqno 21 on /dev/sdY1 for VG vgdata.
 WARNING: Inconsistent metadata found for VG vgdata
 WARNING: outdated PV /dev/sdX1 seqno 20 has been removed in current VG vgdata seqno 21.
 </code></pre></td></tr></table>
@@ -851,10 +847,10 @@ WARNING: outdated PV /dev/sdX1 seqno 20 has been removed in current VG vgdata se
 </div><p>После долгих поисков, нашёл нужную мне команду в багтрекере <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, которая мне помогла:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">vgck --updatemetadata vgdata
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vgck --updatemetadata vgdata
 </code></pre></td></tr></table>
 </div>
 </div><section class="footnotes" role="doc-endnotes">
@@ -862,19 +858,19 @@ WARNING: outdated PV /dev/sdX1 seqno 20 has been removed in current VG vgdata se
 <ol>
 <li id="fn:1" role="doc-endnote">
 <p>
-<a  target="_blank" rel="external noopener" href="https://tldp.org/HOWTO/LVM-HOWTO/initdisks.html">The Linux Documentation Project (LDP) - LVM HOWTO - Initializing disks or disk partitions</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<a  target="_blank" rel="external noopener" href="https://tldp.org/HOWTO/LVM-HOWTO/initdisks.html">The Linux Documentation Project (LDP) - LVM HOWTO - Initializing disks or disk partitions</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>
-<a  target="_blank" rel="external noopener" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/logical_volume_manager_administration/lvm_components#multiple_partitions">Red Hat - LVM 3.1.2. Multiple Partitions on a Disk</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<a  target="_blank" rel="external noopener" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/logical_volume_manager_administration/lvm_components#multiple_partitions">Red Hat - LVM 3.1.2. Multiple Partitions on a Disk</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p>
-<a  target="_blank" rel="external noopener" href="https://linux-lvm.redhat.narkive.com/OJFDsxWy/simulating-lvm-mirror-failure-and-recovery#post12">Simulating LVM Mirror Failure and recovery</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<a  target="_blank" rel="external noopener" href="https://linux-lvm.redhat.narkive.com/OJFDsxWy/simulating-lvm-mirror-failure-and-recovery#post12">Simulating LVM Mirror Failure and recovery</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
 <p>
-<a  target="_blank" rel="external noopener" href="https://bugzilla.redhat.com/show_bug.cgi?id=1747585">Bug 1747585 - vgextend segfaults if attempting to extend using device that was previous removed and volumes were deleted</a> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<a  target="_blank" rel="external noopener" href="https://bugzilla.redhat.com/show_bug.cgi?id=1747585">Bug 1747585 - vgextend segfaults if attempting to extend using device that was previous removed and volumes were deleted</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -1000,7 +996,9 @@ WARNING: outdated PV /dev/sdX1 seqno 20 has been removed in current VG vgdata se
 
   <span class="copyright-year">
     &copy;
-    2020
+    
+      2020 -
+    2022
     <span class="heart">
       
       <i class="iconfont">
