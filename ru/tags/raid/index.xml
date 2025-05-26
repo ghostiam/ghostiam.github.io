@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Raid on GhostIAm Блог</title><link>https://ghostiam.dev/ru/tags/raid/</link><description>Recent content in Raid on GhostIAm Блог</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Wed, 25 Nov 2020 05:30:00 +0900</lastBuildDate><atom:link href="https://ghostiam.dev/ru/tags/raid/index.xml" rel="self" type="application/rss+xml"/><item><title>Настраиваем LVM, используем LVM RAID 1, тестируем</title><link>https://ghostiam.dev/ru/posts/linux-lvm/</link><pubDate>Wed, 25 Nov 2020 05:30:00 +0900</pubDate><guid>https://ghostiam.dev/ru/posts/linux-lvm/</guid><description>&lt;h2 id="предисловие">
+ Предисловие
+ &lt;a class="heading-link" href="#%d0%bf%d1%80%d0%b5%d0%b4%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%b8%d0%b5">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Ссылка на заголовок">&lt;/i>
+ &lt;span class="sr-only">Ссылка на заголовок&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Вот и пришла пора увеличить место на своём домашнем сервере, для этого было куплено 2 диска разных производителей, но одинакового объёма.&lt;br>
+Захотелось сделать soft RAID1, но мне не очень подходит mdadm, так как я хочу иметь более гибкое зеркало, которое можно будет легко расширить в будущем, а не выделять сразу большой объём.&lt;br>
+Решил попытать счастья с LVM RAID, но информации по нему, в сжатом виде, мало, в основном всё заканчивает на том, как его создать. Попробую исправить этот пробел.&lt;/p>
+&lt;figure>&lt;img src="https://ghostiam.dev/ru/posts/linux-lvm/image_hu_418fe2bb12b2f865.webp"
+alt="Мои диски">&lt;figcaption>
+ &lt;p>Мои диски&lt;/p>
+&lt;/figcaption>
+&lt;/figure></description></item></channel></rss>

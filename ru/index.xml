@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GhostIAm Блог</title><link>https://ghostiam.dev/ru/</link><description>Recent content on GhostIAm Блог</description><generator>Hugo</generator><language>ru-RU</language><lastBuildDate>Mon, 26 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ghostiam.dev/ru/index.xml" rel="self" type="application/rss+xml"/><item><title>Устанавливаем и настраиваем Spoolman на QIDI Q1 Pro</title><link>https://ghostiam.dev/ru/posts/qidi-q1-pro-spoolman/</link><pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate><guid>https://ghostiam.dev/ru/posts/qidi-q1-pro-spoolman/</guid><description>&lt;figure>&lt;img src="https://ghostiam.dev/ru/posts/qidi-q1-pro-spoolman/orca-dark-ru_hu_4cef8244847b9c76.webp"
+alt="Интерфейс Spoolman в Fluidd"data-dark-theme>
+
+&lt;img src="https://ghostiam.dev/ru/posts/qidi-q1-pro-spoolman/orca-light-ru_hu_dd1080be6823d2f.webp"
+alt="Интерфейс Spoolman в Fluidd"data-light-theme>&lt;figcaption>
+ &lt;p>Интерфейс Spoolman в Fluidd&lt;/p>
+&lt;/figcaption>
+&lt;/figure>
+
+&lt;figure>&lt;img src="https://ghostiam.dev/ru/posts/qidi-q1-pro-spoolman/spoolman-dark-ru_hu_c48186f9e115c5d2.webp"
+alt="Интерфейс Spoolman"data-dark-theme>
+
+&lt;img src="https://ghostiam.dev/ru/posts/qidi-q1-pro-spoolman/spoolman-light-ru_hu_2aa12c098c25dc39.webp"
+alt="Интерфейс Spoolman"data-light-theme>&lt;figcaption>
+ &lt;p>Интерфейс Spoolman&lt;/p>
+&lt;/figcaption>
+&lt;/figure></description></item><item><title>ClickHouse восстановление</title><link>https://ghostiam.dev/ru/posts/clickhouse-restore/</link><pubDate>Thu, 17 Feb 2022 16:08:15 +0900</pubDate><guid>https://ghostiam.dev/ru/posts/clickhouse-restore/</guid><description>&lt;p>Восстановление репликации или поехавшей агрегации, после того, как пропали данные в ZooKeeper, &lt;strong>без конвертации&lt;/strong> реплицированной таблицы в нереплицируемую &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>.&lt;/p>
+&lt;p>Если в логах у вас ошибки:&lt;/p>
+&lt;div class="code-block">&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Table is in readonly mode
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Cannot allocate block number in ZooKeeper: Coordination::Exception: Transaction failed (No node)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Coordination::Exception: Can&amp;#39;t get data for node /clickhouse/tables/*/*/log: node doesn&amp;#39;t exist (No node).&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;p>А при восстановлении или создании агрегации с &lt;code>POPULATE&lt;/code>&lt;/p>
+&lt;div class="code-block">&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-text" data-lang="text">&lt;span class="line">&lt;span class="cl">Memory limit (for query) exceeded&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;p>то эта статья для вас.&lt;/p>
+&lt;figure>&lt;img src="https://ghostiam.dev/ru/posts/clickhouse-restore/clickhouse.svg"
+alt="ClickHouse, не болей">&lt;figcaption>
+ &lt;p>ClickHouse, не болей&lt;/p>
+&lt;/figcaption>
+&lt;/figure></description></item><item><title>Настраиваем LVM, используем LVM RAID 1, тестируем</title><link>https://ghostiam.dev/ru/posts/linux-lvm/</link><pubDate>Wed, 25 Nov 2020 05:30:00 +0900</pubDate><guid>https://ghostiam.dev/ru/posts/linux-lvm/</guid><description>&lt;h2 id="предисловие">
+ Предисловие
+ &lt;a class="heading-link" href="#%d0%bf%d1%80%d0%b5%d0%b4%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%b8%d0%b5">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Ссылка на заголовок">&lt;/i>
+ &lt;span class="sr-only">Ссылка на заголовок&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Вот и пришла пора увеличить место на своём домашнем сервере, для этого было куплено 2 диска разных производителей, но одинакового объёма.&lt;br>
+Захотелось сделать soft RAID1, но мне не очень подходит mdadm, так как я хочу иметь более гибкое зеркало, которое можно будет легко расширить в будущем, а не выделять сразу большой объём.&lt;br>
+Решил попытать счастья с LVM RAID, но информации по нему, в сжатом виде, мало, в основном всё заканчивает на том, как его создать. Попробую исправить этот пробел.&lt;/p>
+&lt;figure>&lt;img src="https://ghostiam.dev/ru/posts/linux-lvm/image_hu_418fe2bb12b2f865.webp"
+alt="Мои диски">&lt;figcaption>
+ &lt;p>Мои диски&lt;/p>
+&lt;/figcaption>
+&lt;/figure></description></item><item><title>Настройка ИБП на Linux</title><link>https://ghostiam.dev/ru/posts/linux-ups/</link><pubDate>Sat, 29 Aug 2020 06:15:27 +0900</pubDate><guid>https://ghostiam.dev/ru/posts/linux-ups/</guid><description>&lt;h2 id="предисловие">
+ Предисловие
+ &lt;a class="heading-link" href="#%d0%bf%d1%80%d0%b5%d0%b4%d0%b8%d1%81%d0%bb%d0%be%d0%b2%d0%b8%d0%b5">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Ссылка на заголовок">&lt;/i>
+ &lt;span class="sr-only">Ссылка на заголовок&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Несколько лет назад, для резервного питания роутера и Orange Pi, я покупал ИБП &lt;a href="http://pcm.ru/catalog/item/1484" class="external-link" target="_blank" rel="external noopener">Powercom WOW-700U&lt;/a>
+. Хороший, дешёвый девайс, имеет USB порт, автоматически включается при появлении напряжения, не ест из розетки лишнего электричества, так как тип ИБП &amp;ldquo;резервный&amp;rdquo;, что очень хорошо, когда он должен быть включён 24/7, в отличии от моего основного ИБП&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>, который не прочь покушать ~50 Ватт из-за своей &amp;ldquo;интерактивной&amp;rdquo; технологии.&lt;/p>
+&lt;p>Время шло и Orange Pi сначала заменилась на мини-ПК на атоме, а потом и старый ПК стал сервером.&lt;/p>
+&lt;p>Но давайте перейдём уже к сути и самой настройке ИБП на Debian-like Linux!&lt;/p>
+&lt;figure>&lt;img src="https://ghostiam.dev/ru/posts/linux-ups/image_hu_d49049cbb9b0f3a5.webp"
+alt="Кадр из мультфильма &amp;ldquo;Ледниковый период&amp;rdquo;">&lt;figcaption>
+ &lt;p>Кадр из мультфильма &amp;ldquo;Ледниковый период&amp;rdquo;&lt;/p>
+&lt;/figcaption>
+&lt;/figure></description></item><item><title>Блог создан</title><link>https://ghostiam.dev/ru/posts/blog-created/</link><pubDate>Sun, 26 Jul 2020 17:30:00 +0900</pubDate><guid>https://ghostiam.dev/ru/posts/blog-created/</guid><description>&lt;h3 id="свершилось">
+ Свершилось.
+ &lt;a class="heading-link" href="#%d1%81%d0%b2%d0%b5%d1%80%d1%88%d0%b8%d0%bb%d0%be%d1%81%d1%8c">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Ссылка на заголовок">&lt;/i>
+ &lt;span class="sr-only">Ссылка на заголовок&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>Наконец-то, я настроил блог как мне нужно, но чую, что баги ещё повылазят.&lt;/p>
+&lt;h3 id="зачем-мне-блог">
+ Зачем мне блог?
+ &lt;a class="heading-link" href="#%d0%b7%d0%b0%d1%87%d0%b5%d0%bc-%d0%bc%d0%bd%d0%b5-%d0%b1%d0%bb%d0%be%d0%b3">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Ссылка на заголовок">&lt;/i>
+ &lt;span class="sr-only">Ссылка на заголовок&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>Бывает, настроишь, что-нибудь эдакое, проходит время, и все грабли, на которые наступал, забылись и заросли травой. Чтобы повторить то же самое, что делал полгода-год назад, нужно снова проходится по тем же граблям, тратя время и нервы. А если были бы записи&amp;hellip;&lt;/p></description></item></channel></rss>
